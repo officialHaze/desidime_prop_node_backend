@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-// app.set("trust proxy", 1); // comment out while testing locally
+app.set("trust proxy", 1); // comment out while testing locally
 
 app.use(
   session({
@@ -31,11 +31,11 @@ app.use(
     store: new MemoryStore({
       checkPeriod: 86400000, // prune expired entries every 24h
     }),
-    // cookie: {
-    //   sameSite: "none",
-    //   secure: true,
-    //   httpOnly: true,
-    // }, // comment out while testing locally
+    cookie: {
+      sameSite: "none",
+      secure: true,
+      httpOnly: true,
+    }, // comment out while testing locally
   })
 );
 app.use(passport.initialize());

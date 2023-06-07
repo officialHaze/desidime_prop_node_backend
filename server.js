@@ -85,6 +85,10 @@ app.get("/logout", (req, res) => {
   });
 });
 
+app.get("/connectionStream", (req, res) => {
+  res.status(200).send("Connection active");
+});
+
 app.post("/createUser", async (req, res) => {
   const username = req.body.username;
   const email = req.body.email;

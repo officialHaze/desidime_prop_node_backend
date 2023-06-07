@@ -99,10 +99,6 @@ app.post("/createUser", async (req, res) => {
   }
 });
 
-app.post(
-  "/login",
-  passport.authenticate("local", { failureRedirect: process.env.CLIENT_HOME }),
-  (req, res) => {
-    res.status(200).send("Login successfull");
-  }
-);
+app.post("/login", passport.authenticate("local"), (req, res) => {
+  res.status(200).send("Login successfull");
+});
